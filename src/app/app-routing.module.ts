@@ -3,13 +3,40 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'folder/Inbox',
-    pathMatch: 'full'
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+    path: '',
+    loadChildren: () => import('./index/index.module').then( m => m.IndexPageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'forgotpassword',
+    loadChildren: () => import('./forgotpassword/forgotpassword.module').then( m => m.ForgotpasswordPageModule)
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'expensestracker',
+    loadChildren: () => import('./expensestracker/expensestracker.module').then( m => m.ExpensestrackerPageModule)
+  },
+  {
+    path: 'diary',
+    loadChildren: () => import('./diary/diary.module').then( m => m.DiaryPageModule)
+  },
+  {
+    path: 'todolist',
+    loadChildren: () => import('./todolist/todolist.module').then( m => m.TodolistPageModule)
+  },
+  {
+    path: 'index',
+    loadChildren: () => import('./index/index.module').then( m => m.IndexPageModule)
   }
 ];
 
