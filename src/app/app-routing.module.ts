@@ -37,6 +37,26 @@ const routes: Routes = [
   {
     path: 'index',
     loadChildren: () => import('./index/index.module').then( m => m.IndexPageModule)
+  },
+  {
+    path: 'collaborativediary',
+    loadChildren: () => import('./collaborativediary/collaborativediary.module').then( m => m.CollaborativediaryPageModule)
+  },
+  {
+    path: 'personaldiary',
+    loadChildren: () => import('./personaldiary/personaldiary.module').then( m => m.PersonaldiaryPageModule)
+  },
+  {
+    path: 'addbudget',
+    loadChildren: () => import('./addbudget/addbudget.module').then( m => m.AddbudgetPageModule)
+  },
+  {
+    path: 'addexpense',
+    loadChildren: () => import('./addexpense/addexpense.module').then( m => m.AddexpensePageModule)
+  },
+  {
+    path: 'viewexpense',
+    loadChildren: () => import('./viewexpense/viewexpense.module').then( m => m.ViewexpensePageModule)
   }
 ];
 

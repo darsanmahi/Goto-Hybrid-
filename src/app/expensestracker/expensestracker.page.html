@@ -3,10 +3,35 @@
         <ion-buttons slot="start">
             <ion-menu-button></ion-menu-button>
         </ion-buttons>
-        <ion-title>expensestracker</ion-title>
+        <ion-title>Expenses Tracker</ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
+    <ion-grid>
+        <ion-row id="def">
+            <ion-col class="ion-text-center">
+                <ion-card>
+                    <ion-card-title>
+                        <img src="../../assets/images/home.jpg" />
+                        <h3>Track your Expense!
+                            <ion-icon name="wallet"></ion-icon>
+                        </h3>
+                    </ion-card-title>
+                    <ion-card-content>
+                        <ion-buttons>
+                            <ion-button color="primary" [routerLink]="['/addbudget']">Add Budget</ion-button>
+                            <ion-ripple-effect></ion-ripple-effect>
+                            <ion-button color="secondary" [routerLink]="['/addexpense']">Add Expense</ion-button>
+                            <ion-ripple-effect></ion-ripple-effect>
+                        </ion-buttons>
+                        <ion-buttons>
+                            <ion-button style="padding-left: 50px;" color="tertiary" [routerLink]="['/viewexpense']">View Expense</ion-button>
+                        </ion-buttons>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 
 </ion-content>

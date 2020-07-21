@@ -15,24 +15,24 @@ export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public appPages = [
     {
-      title: 'Login',
-      url: '/login',
+      title: 'Home',
+      url: '/home',
       icon: 'home'
     },
     {
       title: 'Expenses Tracker',
       url: '/expensestracker',
-      icon: 'paper-plane'
+      icon: 'wallet'
     },
     {
       title: 'Diary',
       url: '/diary',
-      icon: 'heart'
+      icon: 'book'
     },
     {
       title: 'To-do list',
       url: '/todolist',
-      icon: 'archive'
+      icon: 'today'
     },
   ];
  
