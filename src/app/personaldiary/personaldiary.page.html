@@ -8,5 +8,43 @@
 </ion-header>
 
 <ion-content>
-
+    <ion-grid>
+        <form>
+            <ion-row>
+                <ion-col>
+                    <label for="moments">Put Down Your Moments</label>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <textarea rows="5" name="moments" id="moments" #moments></textarea>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <label for="photo">Drop your Pictures</label>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <input type="file" name="photo" id="photo" #photo (change)="dropPicture($event)">
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <label for="video">Drop your Video</label>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <input type="file" name="video" id="video" #video (change)="dropVideo($event)">
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-button color="primary" (click)="write(moments)">Drop it in</ion-button>
+                </ion-col>
+            </ion-row>
+        </form>
+    </ion-grid>
 </ion-content>
