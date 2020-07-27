@@ -39,10 +39,6 @@ const routes: Routes = [
     loadChildren: () => import('./index/index.module').then( m => m.IndexPageModule)
   },
   {
-    path: 'collaborativediary',
-    loadChildren: () => import('./collaborativediary/collaborativediary.module').then( m => m.CollaborativediaryPageModule)
-  },
-  {
     path: 'personaldiary',
     loadChildren: () => import('./personaldiary/personaldiary.module').then( m => m.PersonaldiaryPageModule)
   },
@@ -70,14 +66,6 @@ const routes: Routes = [
     path: 'addtask',
     loadChildren: () => import('./addtask/addtask.module').then( m => m.AddtaskPageModule)
   },
-  {
-    path: 'viewcollabdiary',
-    loadChildren: () => import('./viewcollabdiary/viewcollabdiary.module').then( m => m.ViewcollabdiaryPageModule)
-  },
-  {
-    path: 'writetocollabdiary',
-    loadChildren: () => import('./writetocollabdiary/writetocollabdiary.module').then( m => m.WritetocollabdiaryPageModule)
-  }
 ];
 
 @NgModule({
