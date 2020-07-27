@@ -21,7 +21,11 @@
                 </ion-card>
             </ion-col>
         </ion-row>
-        <ion-text>Your Gallery</ion-text>
+        <ion-row>
+            <ion-col>
+                <ion-text *ngIf="data2.length!=0">Your Gallery</ion-text>
+            </ion-col>
+        </ion-row>
         <ion-row>
             <ion-slides pager="true" [options]="slideOpts" id="photo">
                 <ion-slide *ngFor="let item of data2">

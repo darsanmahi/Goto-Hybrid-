@@ -1,3 +1,4 @@
+import { FormBuilder, ControlContainer } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -35,7 +36,8 @@ import { AuthenticationService } from './services/login.service'
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     AngularFirestoreModule,
-    AuthenticationService
+    AuthenticationService,
+    FormBuilder,
   ],
   bootstrap: [AppComponent]
 })

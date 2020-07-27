@@ -1,8 +1,9 @@
+import { TodolistPage } from './todolist/todolist.page';
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from "./services/login.service";
 
 
-import { Platform } from '@ionic/angular';
+import { Platform, ModalController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
@@ -40,7 +41,8 @@ export class AppComponent implements OnInit {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    public authService: AuthenticationService
+    public authService: AuthenticationService,
+    private modalCtrl: ModalController
   ) {
     this.initializeApp();
   }
@@ -53,6 +55,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    }
+  }
+  
 
 }

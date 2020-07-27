@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="end">
+            <ion-button (click)="dismiss()">
+                <span ion-text color="primary">Cancel</span>
+            </ion-button>
+        </ion-buttons>
+        <ion-title>Add Task</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form>
+        <ion-item>
+            <ion-label position="floating">Title</ion-label>
+            <ion-input type="text" #title></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Description</ion-label>
+            <ion-textarea rows="2" #description></ion-textarea>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Date</ion-label><br>
+            <ion-input type="date" #date></ion-input>
+        </ion-item>
+        <ion-button expand="block" type="submit" color="secondary" (click)="onSubmit(title,description,date)">Add Task</ion-button>
+    </form>
+</ion-content>

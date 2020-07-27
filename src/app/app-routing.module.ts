@@ -65,6 +65,10 @@ const routes: Routes = [
   {
     path: 'readpersonaldiary',
     loadChildren: () => import('./readpersonaldiary/readpersonaldiary.module').then( m => m.ReadpersonaldiaryPageModule)
+  },
+  {
+    path: 'addtask',
+    loadChildren: () => import('./addtask/addtask.module').then( m => m.AddtaskPageModule)
   }
 ];
 

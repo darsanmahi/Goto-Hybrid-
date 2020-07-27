@@ -36,7 +36,6 @@ export class ReadpersonaldiaryPage implements OnInit {
           var d1 =[];
           var d2 = [];
           this.authState = user.uid;
-          console.log(this.authState);
           this.itemsRef = db.list('users/' + this.authState + '/Diary');
           this.data1 = this.itemsRef.snapshotChanges().pipe(
             map(changes =>
@@ -51,7 +50,6 @@ export class ReadpersonaldiaryPage implements OnInit {
             }
           }).then((event) => {
             d1.forEach(element => {
-              console.log(element);
               const ref = this.storage.ref(user.uid + '/' + element + '.jpg');
               console.log(user.uid + '/' + element + '.jpg');
               if(ref){

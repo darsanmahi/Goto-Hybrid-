@@ -8,5 +8,47 @@
 </ion-header>
 
 <ion-content>
-
+    <ion-grid>
+        <ion-row *ngFor="let item of data3 | async">
+            <ion-col>
+                <ion-card>
+                    <ion-card-header>
+                        <ion-card-title>Budget</ion-card-title>
+                    </ion-card-header>
+                    <ion-card-content>
+                        Budget: {{item}}
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+        <ion-row *ngFor="let item of data2 | async">
+            <ion-col>
+                <ion-card>
+                    <ion-card-header>
+                        <ion-card-title>Balance</ion-card-title>
+                    </ion-card-header>
+                    <ion-card-content>
+                        Remaining Balance: {{item}}
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+        <ion-row *ngFor="let item of data1 | async">
+            <ion-col>
+                <ion-card>
+                    <ion-card-header>
+                        <ion-card-title>Spent on {{item.key}}</ion-card-title>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <ion-row>
+                            <ion-text>Amount Spent: {{ item.Amount | json }} </ion-text>
+                        </ion-row>
+                        <ion-row>
+                            <ion-text>Reason: {{ item.Name | json }} </ion-text>
+                        </ion-row>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>

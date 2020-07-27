@@ -1,13 +1,38 @@
 <ion-header>
     <ion-toolbar>
-
         <ion-buttons slot="start">
             <ion-menu-button></ion-menu-button>
         </ion-buttons>
-        <ion-title>todolist</ion-title>
+        <ion-title>To-do List</ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+    <ion-grid>
+        <div *ngIf="data1">
+            <ion-list>
+                <ion-item-sliding *ngFor="let item1 of data1 | async" #item>
+                    <ion-item>
+                        <ion-label>
+                            <h3>Title: {{ item1.key }}</h3>
+                            <p>Description: {{ item1.Description }}</p>
+                            <p>Deadline: {{ item1.Date }}</p>
+                        </ion-label>
+                        <ion-item-options side="end">
+                            <ion-item-option color="success">
+                                <ion-button color="success" (click)="deleteTask(item,item1.key)">
+                                    <ion-icon name="checkmark"></ion-icon>
+                                </ion-button>
+                            </ion-item-option>
+                        </ion-item-options>
+                    </ion-item>
+                </ion-item-sliding>
+            </ion-list>
+        </div>
+    </ion-grid>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button>
+            <ion-icon name="add" (click)="openAddTask()"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
 </ion-content>
