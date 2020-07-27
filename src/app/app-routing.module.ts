@@ -69,6 +69,14 @@ const routes: Routes = [
   {
     path: 'addtask',
     loadChildren: () => import('./addtask/addtask.module').then( m => m.AddtaskPageModule)
+  },
+  {
+    path: 'viewcollabdiary',
+    loadChildren: () => import('./viewcollabdiary/viewcollabdiary.module').then( m => m.ViewcollabdiaryPageModule)
+  },
+  {
+    path: 'writetocollabdiary',
+    loadChildren: () => import('./writetocollabdiary/writetocollabdiary.module').then( m => m.WritetocollabdiaryPageModule)
   }
 ];
 

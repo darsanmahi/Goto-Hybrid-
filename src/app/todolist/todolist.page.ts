@@ -1,3 +1,4 @@
+import { element } from 'protractor';
 import { AddtaskPage } from './../addtask/addtask.page';
 import { Observable } from 'rxjs';
 import { AngularFireDatabase,AngularFireList } from '@angular/fire/database';
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { LoadingController, AlertController, IonItemSliding, ToastController, ModalController } from '@ionic/angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 
 @Component({
   selector: 'app-todolist',
@@ -26,7 +28,8 @@ export class TodolistPage implements OnInit {
     private alertCtrl: AlertController,
     private toastCtrl: ToastController,
     private formbuilder: FormBuilder,
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    private localnotif : LocalNotifications
   ) {
     this.ngFireAuth.authState.subscribe((user)=>{
       if(user){
@@ -43,6 +46,12 @@ export class TodolistPage implements OnInit {
         });
         this.data1.forEach(element => {
           console.log(element);
+          this.localnotif.schedule({
+            text: "Pending Event",
+            //trigger: { at: {element.Date} },
+            led: "FF0000",
+            sound: null,
+          });
         });
       }
     })

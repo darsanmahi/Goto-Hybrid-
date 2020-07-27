@@ -1,7 +1,8 @@
 {
   "name": "go-to",
   "integrations": {
-    "cordova": {}
+    "cordova": {},
+    "capacitor": {}
   },
   "type": "angular"
 }

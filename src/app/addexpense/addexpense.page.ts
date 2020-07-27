@@ -23,10 +23,34 @@ export class AddexpensePage implements OnInit {
     this.ngFireAuth.authState.subscribe((user)=>{
       if(user){
         var data=0;
-        this.db.database.ref('users/'+user.uid+'/Expense/'+date.value).set({
-          Amount: Number(amt.value),
-          Name: reason.value
-        })
+        var i = '';
+        var flag = 0;
+        var da = 0;
+        var reas = '';
+        this.db.database.ref('users/' + user.uid + '/Expense/').once("value",function(snapshot){
+          var data11 = snapshot.val();
+          for(i in data11){
+            if(i==date.value){
+              da=data11[i].Amount;
+              reas = data11[i].Name;
+              flag=1;
+              break;
+            }
+          }
+        }).then((a)=>{
+          if(flag==1){
+            this.db.database.ref('users/' + user.uid + '/Expense/' + date.value).set({
+              Amount: Number(amt.value) + da,
+              Name: reason.value + ',' + reas
+            })
+          }
+          else{
+            this.db.database.ref('users/' + user.uid + '/Expense/' + date.value).set({
+              Amount: Number(amt.value),
+              Name: reason.value
+            })
+          }
+        });
         this.data11 = this.db.list('users/' + user.uid + '/Balance').valueChanges();
         this.data11.forEach(element => {
             var tot = Number(element) - Number(amt.value);

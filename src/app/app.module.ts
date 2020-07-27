@@ -1,3 +1,4 @@
+import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 import { FormBuilder, ControlContainer } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -18,6 +19,7 @@ import { environment } from '../environments/environment';
 
 import { AuthenticationService } from './services/login.service'
 
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -29,7 +31,7 @@ import { AuthenticationService } from './services/login.service'
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     AngularFirestoreModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
   ],
   providers: [
     StatusBar,
@@ -38,7 +40,8 @@ import { AuthenticationService } from './services/login.service'
     AngularFirestoreModule,
     AuthenticationService,
     FormBuilder,
+    LocalNotifications,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
