@@ -8,5 +8,53 @@
 </ion-header>
 
 <ion-content>
-
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label position="floating">Amount Spent</ion-label>
+                    <ion-input type="number" #amt required></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label position="floating">Date</ion-label><br>
+                    <ion-input type="date" #date required></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label position="floating">Reason</ion-label>
+                    <ion-select #name>
+                        <ion-select-option value="Hobbies">Spend on hobbies</ion-select-option>
+                        <ion-select-option value="Vaccation with friends or family">Vaccation with friends or family
+                        </ion-select-option>
+                        <ion-select-option value="Education">Education</ion-select-option>
+                        <ion-select-option value="Job training">Job training</ion-select-option>
+                        <ion-select-option value="Sporting goods">Sporting goods</ion-select-option>
+                        <ion-select-option value="EB Bills">Bills</ion-select-option>
+                        <ion-select-option value="Food">Food</ion-select-option>
+                        <ion-select-option value="Emergency">Emergency</ion-select-option>
+                        <ion-select-option value="Donation">Donation</ion-select-option>
+                        <ion-select-option value="Online Purchases">Online Purchases</ion-select-option>
+                        <ion-select-option value="Offline Purchases">Offline Purchases</ion-select-option>
+                        <ion-select-option value="Parties">Parties or birthday treat</ion-select-option>
+                        <ion-select-option value="Travelling">Travelling</ion-select-option>
+                        <ion-select-option value="Electronic gadgets">Electronic Gadjets</ion-select-option>
+                        <ion-select-option value="Personal expense">Personal expense</ion-select-option>
+                        <ion-select-option value="other expense">Other expense</ion-select-option>
+                    </ion-select>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col width-50 style="text-align: center;">
+                <ion-button color="primary" (click)="addExpense(amt,date,name)">Add Expense</ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>

@@ -13,7 +13,7 @@
             <ion-col>
                 <ion-card>
                     <ion-card-header>
-                        <ion-card-title>{{item.key}}</ion-card-title>
+                        <ion-card-title>Scribbled on {{item.key}}</ion-card-title>
                     </ion-card-header>
                     <ion-card-content>
                         {{ item.mom | json }}
@@ -21,8 +21,19 @@
                 </ion-card>
             </ion-col>
         </ion-row>
+        <ion-text>Your Gallery</ion-text>
         <ion-row>
             <ion-slides pager="true" [options]="slideOpts" id="photo">
+                <ion-slide *ngFor="let item of data2">
+                    <img [src]="item" />
+                </ion-slide>
+            </ion-slides>
+        </ion-row>
+        <ion-row>
+            <ion-slides pager="true" [options]="slideOpts1" id="video">
+                <ion-slide *ngFor="let item of data3">
+                    <video [src]="item" height="200" width="280" autoplay controls></video>
+                </ion-slide>
             </ion-slides>
         </ion-row>
     </ion-grid>

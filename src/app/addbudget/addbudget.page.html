@@ -12,15 +12,28 @@
         <form>
             <ion-row>
                 <ion-col>
-                    <ion-label position="floating">Budget</ion-label>
-                    <ion-input type="text" #budget></ion-input>
+                    <ion-item lines="full">
+                        <ion-label position="floating">Budget</ion-label>
+                        <ion-input type="number" #budget required></ion-input>
+                    </ion-item>
                 </ion-col>
             </ion-row>
             <ion-row>
                 <ion-col>
-                    <ion-text>Any Increments!?</ion-text>
-                    <ion-label position="floating">Increased Budget</ion-label>
-                    <ion-input #incbudget></ion-input>
+                    <ion-button color="primary" (click)="addBudget(budget)">Add Budget</ion-button>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-item>
+                        <ion-label position="floating">Any Increments!?</ion-label>
+                        <ion-input type="number" #incbudget required></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-button color="primary" (click)="addIncrement(incbudget)">Add Increment</ion-button>
                 </ion-col>
             </ion-row>
         </form>

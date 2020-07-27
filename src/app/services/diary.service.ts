@@ -6,7 +6,6 @@ import { AngularFireAuth } from "@angular/fire/auth";
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { map } from 'rxjs/operators';
 import { Observable, from } from 'rxjs';
-import { computeStackId } from '@ionic/angular/directives/navigation/stack-utils';
 @Injectable({
   providedIn: 'root'
 })
@@ -35,7 +34,7 @@ export class DiaryService {
     var montht1 = '0' + String(montht);
     console.log(montht1);
     var yeart = date.getFullYear();
-    var today = String(datet) + (montht1) + String(yeart);
+    var today = String(datet) + '-' + (montht1) + '-' + String(yeart);
     this.ngFireAuth.authState.subscribe(user => {
       if(user){
         var userID = user.uid;
@@ -56,8 +55,8 @@ export class DiaryService {
     var datet = date.getDate();
     var montht = date.getMonth() + 1;
     var montht1 = '0' + String(montht);
-    var yeart = date.getFullYear();
-    var today = String(datet) + (montht1) + String(yeart);
+    var yeart = date.getFullYear();``
+    var today = String(datet) + '-' + String(montht1) + '-' + String(yeart);
     this.ngFireAuth.authState.subscribe(user=>{
       if(user){
         var userid = user.uid;
@@ -72,7 +71,7 @@ export class DiaryService {
     var montht = date.getMonth() + 1;
     var montht1 = '0' + String(montht);
     var yeart = date.getFullYear();
-    var today = String(datet) + (montht1) + String(yeart);
+    var today = String(datet)+ '-' + (montht1) + '-' + String(yeart);
     this.ngFireAuth.authState.subscribe(user => {
       if (user) {
         var userid = user.uid;

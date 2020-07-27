@@ -69,8 +69,22 @@ export class CollaborativediaryPage implements OnInit {
       }
     },2000)
   }
-  createBook(bid: number, pword: string, name: string){
-
+  createBook(bid, pword, name){
+    this.ngFireAuth.authState.subscribe((user) => {
+      if (user) {
+        var date = new Date();
+        var datet = date.getDate();
+        var montht = date.getMonth() + 1;
+        var montht1 = '0' + String(montht);
+        var yeart = date.getFullYear();
+        var today = String(datet) + '-' + (montht1)+ '-' + String(yeart);
+        console.log(name);
+        console.log('users/' + bid + '/' + pword + '/' + today + '/' + name);
+        this.db.database.ref('users/' + bid + '/' + pword + '/' + today + '/' + name).set({
+          mom: 'New Book Up here!'
+        }).then(e => console.log('Success'))
+      }
+    })
   }
   joinBook(bid, pword, name){
     this.ngFireAuth.authState.subscribe((user)=>{
@@ -80,7 +94,7 @@ export class CollaborativediaryPage implements OnInit {
         var montht = date.getMonth() + 1;
         var montht1 = '0' + String(montht);
         var yeart = date.getFullYear();
-        var today = String(datet) + (montht1) + String(yeart);
+        var today = String(datet) + '-' + (montht1) + '-' + String(yeart);
         console.log(name);
         console.log('users/'+ bid + '/' + pword + '/' + today + '/' + name);
         this.db.database.ref('users/'+bid+'/'+pword+'/'+today+'/'+name).set({
