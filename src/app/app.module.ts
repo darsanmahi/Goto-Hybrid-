@@ -25,8 +25,6 @@ import { AuthenticationService } from './services/login.service'
     IonicModule.forRoot(),
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireModule.initializeApp(environment.firebaseConfig1),
-    AngularFireModule.initializeApp(environment.firebaseConfig2),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     AngularFirestoreModule,

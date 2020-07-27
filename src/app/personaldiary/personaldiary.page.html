@@ -9,42 +9,26 @@
 
 <ion-content>
     <ion-grid>
-        <form>
-            <ion-row>
-                <ion-col>
-                    <label for="moments">Put Down Your Moments</label>
-                </ion-col>
-            </ion-row>
-            <ion-row>
-                <ion-col>
-                    <textarea rows="5" name="moments" id="moments" #moments></textarea>
-                </ion-col>
-            </ion-row>
-            <ion-row>
-                <ion-col>
-                    <label for="photo">Drop your Pictures</label>
-                </ion-col>
-            </ion-row>
-            <ion-row>
-                <ion-col>
-                    <input type="file" name="photo" id="photo" #photo (change)="dropPicture($event)">
-                </ion-col>
-            </ion-row>
-            <ion-row>
-                <ion-col>
-                    <label for="video">Drop your Video</label>
-                </ion-col>
-            </ion-row>
-            <ion-row>
-                <ion-col>
-                    <input type="file" name="video" id="video" #video (change)="dropVideo($event)">
-                </ion-col>
-            </ion-row>
-            <ion-row>
-                <ion-col>
-                    <ion-button color="primary" (click)="write(moments)">Drop it in</ion-button>
-                </ion-col>
-            </ion-row>
-        </form>
+        <ion-row>
+            <ion-col class="ion-text-center">
+                <ion-card>
+                    <ion-card-header>
+                        <ion-card-title>
+                            <img src="../../assets/images/black-and-white-blur-close-up-lock-411227.jpg" /> Personal Diary
+                        </ion-card-title>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <ion-text>Feeling lazy to write diary? Don't worry here is your go-to diary. Capture all your emotions, memories and every exciting stuff you had.</ion-text>
+                        <ion-buttons>
+                            <ion-button color="primary" [routerLink]="['/writepersonaldiary']">Write For Today</ion-button>
+                        </ion-buttons>
+                        <ion-buttons>
+                            <ion-button color="secondary" [routerLink]="['/readpersonaldiary']">See your Previous Writings</ion-button>
+                        </ion-buttons>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
     </ion-grid>
+
 </ion-content>

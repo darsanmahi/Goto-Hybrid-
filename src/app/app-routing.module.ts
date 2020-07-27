@@ -57,6 +57,14 @@ const routes: Routes = [
   {
     path: 'viewexpense',
     loadChildren: () => import('./viewexpense/viewexpense.module').then( m => m.ViewexpensePageModule)
+  },
+  {
+    path: 'writepersonaldiary',
+    loadChildren: () => import('./writepersonaldiary/writepersonaldiary.module').then( m => m.WritepersonaldiaryPageModule)
+  },
+  {
+    path: 'readpersonaldiary',
+    loadChildren: () => import('./readpersonaldiary/readpersonaldiary.module').then( m => m.ReadpersonaldiaryPageModule)
   }
 ];
 

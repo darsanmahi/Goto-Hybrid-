@@ -4,21 +4,30 @@ import { Injectable, NgZone } from '@angular/core';
 import { Router } from "@angular/router";
 import { AngularFireAuth } from "@angular/fire/auth";
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
-
-
+import { map } from 'rxjs/operators';
+import { Observable, from } from 'rxjs';
+import { computeStackId } from '@ionic/angular/directives/navigation/stack-utils';
 @Injectable({
   providedIn: 'root'
 })
 export class DiaryService {
-
+  authState: any;
+  Firebase = "https://personaldiary-719e9.firebaseio.com";
   constructor(
     public afStore: AngularFirestore,
     public ngFireAuth: AngularFireAuth,
     public router: Router,
     public ngZone: NgZone,
-    private db : AngularFireDatabase,
-    private storage : AngularFireStorage
-  ) { }
+    public db : AngularFireDatabase,
+    private storage : AngularFireStorage,
+  ) { 
+    this.ngFireAuth.authState.subscribe((authState) => {
+      if(authState){
+        this.authState=authState.uid;
+        console.log(this.authState);
+      }
+    });
+  }
   writepersonaldiary(data){
     var date = new Date();
     var datet = date.getDate();
@@ -30,7 +39,7 @@ export class DiaryService {
     this.ngFireAuth.authState.subscribe(user => {
       if(user){
         var userID = user.uid;
-        this.db.database.ref('users/' + userID + '/Diary' + '/' + today).set({
+        this.db.database.ref('users/' + userID + '/Diary'+'/'+today).set({
           mom: data
         })
         .then(
@@ -71,6 +80,22 @@ export class DiaryService {
         this.storage.ref(userid + '/' + mynewfile1.name).put(vid).catch(e => alert(e.message));
       }
     })
+  }
+
+  async readData(){
+    if(typeof this.readprev==='undefined'){
+
+    }
+    else{
+      console.log(this.readprev())
+    const data2 = await(this.readprev());
+    console.log(data2);
+    return data2;
+    }
+  }
+
+  readprev(){
+    return this.db.list('users/').valueChanges();
   }
 
 }

@@ -11,5 +11,9 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
   }
+  slideOpts = {
+    initialSlide: 0,
+    speed: 400
+  };
 
 }

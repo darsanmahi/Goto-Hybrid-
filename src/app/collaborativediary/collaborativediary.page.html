@@ -8,5 +8,47 @@
 </ion-header>
 
 <ion-content>
-
+    <ion-grid>
+        <form>
+            <ion-row>
+                <ion-col>
+                    <ion-item>
+                        <ion-label position="floating">Book id</ion-label>
+                        <ion-input type="text" #bookid required></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-item>
+                        <ion-label position="floating">Password</ion-label>
+                        <ion-input type="password" #pword required></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-item>
+                        <ion-label position="floating">Name</ion-label>
+                        <ion-input type="text" #name required></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-row width-50 style="text-align: center;">
+                <ion-col>
+                    <ion-button color="primary" (click)="openBook(bookid,pword,name)">Open Book</ion-button>
+                </ion-col>
+            </ion-row>
+            <ion-row width-50 style="text-align: center;">
+                <ion-col>
+                    <ion-button color="secondary" (click)="checkBookid(bookid,pword,name)">Join Book</ion-button>
+                </ion-col>
+            </ion-row>
+            <ion-row width-50 style="text-align: center;">
+                <ion-col>
+                    <ion-button color="tertiary" (click)="createBook(bookid,pword,name)">Create Book</ion-button>
+                </ion-col>
+            </ion-row>
+        </form>
+    </ion-grid>
 </ion-content>
