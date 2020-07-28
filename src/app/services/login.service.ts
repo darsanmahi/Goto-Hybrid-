@@ -31,6 +31,7 @@ export class AuthenticationService {
 
   // Login in with email/password
   SignIn(email, password) {
+    localStorage.setItem("user", email);
     return this.ngFireAuth.signInWithEmailAndPassword(email, password)
   }
 
@@ -54,7 +55,8 @@ export class AuthenticationService {
   // Returns true when user is looged in
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user'));
-    return (user !== null && user.emailVerified !== false) ? true : false;
+    console.log(user);
+    return (user !== null) ? true : false;
   }
 
   // Returns true when user's email is verified

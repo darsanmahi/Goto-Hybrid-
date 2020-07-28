@@ -46,12 +46,6 @@ export class TodolistPage implements OnInit {
         });
         this.data1.forEach(element => {
           console.log(element);
-          this.localnotif.schedule({
-            text: "Pending Event",
-            //trigger: { at: {element.Date} },
-            led: "FF0000",
-            sound: null,
-          });
         });
       }
     })
