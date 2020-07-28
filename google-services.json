@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "721824799231",
+    "firebase_url": "https://personaldiary-719e9.firebaseio.com",
+    "project_id": "personaldiary-719e9",
+    "storage_bucket": "personaldiary-719e9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:721824799231:android:96247baaf807da60fa2fca",
+        "android_client_info": {
+          "package_name": "com.team2point0.allinall"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "721824799231-q8o8bjf0i8ev6napumdd6e1dp10m8nau.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNWYK0-OeEaPYjv9XveR7Kb7lBtPgfbW8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "721824799231-q8o8bjf0i8ev6napumdd6e1dp10m8nau.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
