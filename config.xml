@@ -2,7 +2,7 @@
 <widget id="com.team2point0.allinall" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Your Go-to</name>
     <description>An app which has an online diary, an expenses tracker and an todo list!</description>
-    <author email="darsanprapanjan@gmail.com" href="https://personaldiary-719e9.web.app/">Priyadarsan</author>
+    <author email="darsanprapanjan@gmail.com" href="https://darsanprapanjan.wixsite.com/priyadarsan">Priyadarsan</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
