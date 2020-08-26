@@ -4,7 +4,7 @@ This is the repository for the hybrid application of Get Fit Buddy. Built with I
 
 ## Steps to Proceed
 
-git clone https://github.com/priyadarsanmahendiran/BLOK.git
+git clone https://github.com/priyadarsanmahendiran/Goto-Hybrid-.git
 
 Go the cloned folder
 
